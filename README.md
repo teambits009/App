@@ -1,71 +1,160 @@
 # 🔒 Privacy-First Digital ID + Wallet
 
-A next-generation, multi-platform application that lets users securely store and manage their identity, financial information, health data, and even crypto assets — all in one place. Built with privacy, decentralization, and cross-platform compatibility at its core.
+A next-generation, multi-platform application that lets users securely store and manage their identity, financial information, health data, and crypto assets — all in one place. Built with privacy, decentralization, and cross-platform compatibility at its core.
 
 ---
 
-## 🧠 What Is It?
+## 🧠 Overview
 
-**Privacy-First Digital ID + Wallet** is a mobile-first application designed to be the safest digital vault for your personal data. Think of it as a decentralized, privacy-respecting alternative to Apple Wallet or Google Wallet — available to everyone, on any platform.
-
-With this app, users can:
-- Store and manage digital identity (gov ID, license, student ID, etc.)
-- Save credit/debit cards, loyalty cards, and transit passes
-- Securely hold health records (vaccination cards, prescriptions, etc.)
-- Manage and send/receive cryptocurrencies or tokenized assets
-- Use biometric authentication for all sensitive actions
+**Privacy-First Digital ID + Wallet** is a mobile-first app designed to be the safest digital vault for personal data. It provides decentralized, verifiable identity management, secure financial storage, and encrypted health data access.
 
 ---
 
 ## 🚀 Features
 
-### 🪪 Digital Identity
+### 🦩 Digital Identity
 - Store verifiable credentials (e.g., driver’s license, passport, student ID)
-- Issuer-verifiable via blockchain without exposing data
-- QR and NFC tap-to-share for on-demand identity presentation
+- Issuer-verifiable via blockchain (W3C VC + DID standards)
+- Tap-to-share with QR and NFC support
 
 ### 💳 Financial Wallet
-- Save cards (credit, debit, loyalty) with tokenized security
-- Tap-to-pay via NFC and QR for in-store purchases
-- Peer-to-peer payments using username or wallet address
+- Tokenized credit/debit card storage
+- Peer-to-peer payments using wallet address or username
+- QR/NFC in-store payment integration
 
 ### ⚕️ Health Data Vault
-- Store medical history, test results, vaccination cards, prescriptions
-- Share with healthcare providers on your terms
-- Encrypted with end-to-end key ownership
+- Secure storage for medical records, prescriptions, and vaccination cards
+- Fine-grained access control for healthcare providers
+- E2E encrypted, privacy-focused storage
 
-### 🪙 Crypto & Token Management
-- Send/receive crypto assets (ETH, BTC, SOL, USDC, etc.)
-- WalletConnect integration for dApps
-- Seed phrase backup & cold wallet support
+### 🪙 Crypto & Tokens
+- Native support for Ethereum, Solana, Polygon networks
+- WalletConnect v2 support for dApps
+- Seed phrase backup, cold wallet support
 
-### 🔒 Security & Privacy
-- Zero-knowledge proofs for identity verification
-- End-to-end encryption on all data
-- Biometric + passcode layered protection
-- Local-first storage with optional decentralized backup (e.g., IPFS, Ceramic)
-
----
-
-## 🛠️ Tech Stack
-
-| Area | Tech |
-|------|------|
-| Mobile App | Flutter (iOS & Android) |
-| Identity Layer | Decentralized Identifiers (DIDs), Verifiable Credentials |
-| Blockchain | Ethereum, Polygon, or Solana (pluggable) |
-| Storage | Local DB (Hive / SQLite) + IPFS/Ceramic (optional cloud sync) |
-| Authentication | Biometrics (Face ID, Touch ID), 2FA |
-| Crypto Wallet | Web3 libraries (ethers.js, wallet-core, etc.) |
+### 🔐 Security
+- End-to-end encryption on all local and synced data
+- Biometric authentication (Face ID / Touch ID)
+- Zero-knowledge proof support for privacy-preserving verification
 
 ---
 
-## 🔐 Security Model
+## 📆 Tech Stack
 
-- **Data Ownership**: All user data is stored locally by default. Cloud backup is encrypted with user-generated keys only they control.
-- **No Central Servers**: Authentication and ID verification happen via decentralized protocols (DIDComm, VC/VP frameworks).
-- **Open Source**: Transparency first. Anyone can inspect the code and audit the security model.
+| Layer | Stack |
+|-------|-------|
+| Mobile App | Flutter (iOS/Android) |
+| Blockchain | Ethereum, Polygon, Solana (pluggable) |
+| Identity | DIDs, Verifiable Credentials (W3C) |
+| Storage | Hive (local), IPFS/Ceramic (decentralized backup) |
+| Crypto Wallet | wallet-core, ethers.js, bip39 |
+| Auth | Biometrics, 2FA, passcode fallback |
 
 ---
 
-## 📦 Getting Started (Dev)
+## 🛡️ Security Model
+
+- **Local-First**: All sensitive data is stored and encrypted on the device by default
+- **User-Owned Encryption Keys**: Keys are generated on-device and never leave the user’s control
+- **No Central Servers**: Verification via decentralized protocols (DIDComm, VC exchanges)
+- **Auditability**: Entire stack is open-source and auditable
+
+---
+
+## 📆 Project Structure
+
+```bash
+/
+├── android/
+├── ios/
+├── lib/
+│   ├── screens/       # UI screens
+│   ├── models/        # Data models
+│   ├── services/      # Blockchain, storage, auth services
+│   └── widgets/       # Reusable widgets
+├── assets/            # Icons, fonts, images
+├── test/              # Unit and widget tests
+├── pubspec.yaml       # Flutter dependencies
+└── README.md
+```
+
+---
+
+## 🚫 Requirements
+
+- Flutter 3.x+
+- Dart SDK
+- Android Studio / Xcode (for mobile builds)
+- Compatible OBD (optional) or IPFS node (optional for sync)
+
+---
+
+## 🛠️ Setup & Run (Local Dev)
+
+```bash
+# Clone the repository
+$ git clone https://github.com/your-org/privacy-wallet-app.git
+$ cd privacy-wallet-app
+
+# Install dependencies
+$ flutter pub get
+
+# Run on emulator or device
+$ flutter run
+```
+
+To use advanced features (e.g., IPFS sync), configure the `.env` file and install IPFS locally.
+
+---
+
+## 📝 Example Use Cases
+
+- Tap-to-pay with tokenized card or crypto
+- Verify ID via QR when checking into venues
+- Show vaccination pass from health data vault
+- Login to dApps using DID auth
+
+---
+
+## 📅 Roadmap
+
+- [ ] Support for international digital IDs (e.g., eIDAS, Aadhaar)
+- [ ] Decentralized health provider integrations
+- [ ] Built-in DEX & swap functionality
+- [ ] Full offline support for ID and credential verification
+
+---
+
+## 🌐 Documentation
+
+- [Architecture Overview](docs/ARCHITECTURE.md)
+- [Contribution Guide](CONTRIBUTING.md)
+- [Security Whitepaper](docs/SECURITY.md)
+
+---
+
+## 🚜 Contributing
+
+We welcome contributions from the open-source community!
+
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📧 Contact
+
+For support, feedback or partnership:
+
+- Email: brandonopere6@gmail.com/brandon@techopssapex.com
+
+
